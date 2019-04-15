@@ -4,17 +4,20 @@ const dataCandidates = [
   {
     id: 1,
     name: 'Jokowi Amin',
-    result: 1
+    result: 1,
+    increment: 1
   },
   {
     id: 2,
     name: 'Prabowo Sandi',
-    result: 1
+    result: 1,
+    increment: 1
   },
   {
     id: 3,
     name: 'Nurhadi Aldo',
-    result: 100
+    result: 100,
+    increment: 10
   }
 ]
 
@@ -37,10 +40,10 @@ const displayCandidates = () => {
 
 const addEventListeners = () => {
   dataCandidates.forEach((candidate, index) => {
-    const { id, name, result } = candidate
+    const { id, name, result, increment } = candidate
 
     document.getElementById(`vote-${id}`).addEventListener('click', function() {
-      dataCandidates[index].result += 1
+      dataCandidates[index].result += increment
       displayCandidates()
       addEventListeners()
     })
